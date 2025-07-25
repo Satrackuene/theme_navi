@@ -1,0 +1,9 @@
+#navicore-vehicles-filter {
+	margin-bottom: 10px;
+	padding: 0.4rem;
+	max-width: 300px;
+	width: 100%;
+}
+#navicore-vehicles-table th {
+	cursor: pointer;
+}

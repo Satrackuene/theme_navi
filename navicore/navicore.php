@@ -2,7 +2,7 @@
 /**
  * Plugin Name: naviCore
  * Description: Funcionalidades de campañas recall y buscador de vehículos
- * Version: 0.1.2
+ * Version: 0.1.3
  * Author: ChatGPT
  */
 
@@ -12,7 +12,7 @@ if (!defined('ABSPATH')) {
 
 define('NAVICORE_PATH', plugin_dir_path(__FILE__));
 define('NAVICORE_URL', plugin_dir_url(__FILE__));
-define('NAVICORE_VERSION', '0.1.2');
+define('NAVICORE_VERSION', '0.1.3');
 
 require_once NAVICORE_PATH . 'includes/class-vehicles.php';
 require_once NAVICORE_PATH . 'includes/class-recall-cpt.php';

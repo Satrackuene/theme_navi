@@ -30,6 +30,16 @@ class Vehicles
   public function __construct()
   {
     add_action('admin_menu', array($this, 'admin_menu'));
+    add_action('admin_enqueue_scripts', array($this, 'enqueue'));
+  }
+
+  public function enqueue($hook)
+  {
+    if ($hook !== 'navicore_page_navicore_vehicles') {
+      return;
+    }
+    wp_enqueue_script('navicore-admin', NAVICORE_URL . 'assets/js/cnv-admin.js', array('jquery'), NAVICORE_VERSION, true);
+    wp_enqueue_style('navicore-admin', NAVICORE_URL . 'assets/css/cnv-admin.css', array(), NAVICORE_VERSION);
   }
 
   public function admin_menu()
@@ -132,7 +142,8 @@ class Vehicles
       return;
     }
     echo '<h2>Vehículos registrados</h2>';
-    echo '<table class="widefat fixed striped">';
+    echo '<input type="text" id="navicore-vehicles-filter" placeholder="Filtrar" />';
+    echo '<table id="navicore-vehicles-table" class="widefat fixed striped">';
     echo '<thead><tr><th>VIN</th><th>Placa</th><th>Modelo</th><th>Marca</th></tr></thead><tbody>';
     foreach ($rows as $r) {
       echo '<tr><td>' . esc_html($r['vin']) . '</td><td>' . esc_html($r['plate']) . '</td><td>' . esc_html($r['model']) . '</td><td>' . esc_html($r['brand']) . '</td></tr>';
