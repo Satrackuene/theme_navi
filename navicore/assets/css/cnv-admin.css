@@ -4,6 +4,16 @@
 	max-width: 300px;
 	width: 100%;
 }
-#navicore-vehicles-table th {
+#navicore-vehicles-table th button {
+	background: none;
+	border: none;
+	cursor: pointer;
+	padding: 0 2px;
+}
+#navicore-vehicles-table .button-link-delete {
+	color: #b32d2e;
+	text-decoration: none;
+	background: none;
+	border: none;
 	cursor: pointer;
 }

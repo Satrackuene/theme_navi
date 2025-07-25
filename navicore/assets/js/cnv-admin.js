@@ -21,14 +21,13 @@ jQuery(function ($) {
 	}
 
 	var $table = $("#navicore-vehicles-table");
-	$table.find("thead th").each(function (index) {
-		var $th = $(this);
-		$th.data("index", index).data("reverse", false).css("cursor", "pointer");
-		$th.on("click", function () {
-			var reverse = !$th.data("reverse");
-			$th.data("reverse", reverse);
-			sortTable($table, index, reverse);
-		});
+	$table.find("button.sort-asc").on("click", function () {
+		var index = $(this).data("index");
+		sortTable($table, index, false);
+	});
+	$table.find("button.sort-desc").on("click", function () {
+		var index = $(this).data("index");
+		sortTable($table, index, true);
 	});
 
 	$("#navicore-vehicles-filter").on("input", function () {
