@@ -1,0 +1,43 @@
+/*
+Theme Name: Theme Navitrans
+Theme URI: https://navitrans.com/theme/
+Author: Juan Carlos Zorro
+Author URI: https://navitrans.com/
+Description: Tema exclusivo para Navitrans
+Version: 1.0.11
+Tested up to: 5.4
+Requires PHP: 8.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: theme_navitrans
+Tags: navitrans
+*/
+
+body,
+html {
+	padding: 0;
+	margin: 0;
+	min-height: 100%;
+}
+
+body * {
+	font-family: "Roboto", sans-serif;
+	font-optical-sizing: auto;
+	font-variation-settings: "wdth" 100;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+h1 *,
+h2 *,
+h3 *,
+h4 *,
+h5 *,
+h6 * {
+	font-family: "Poppins", Sans-serif;
+	font-optical-sizing: auto;
+	font-style: normal;
+}
