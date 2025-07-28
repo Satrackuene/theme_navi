@@ -7,16 +7,19 @@
 	gap: 1.5rem;
 	margin-bottom: 1rem;
 }
-#navicore-search-inputs {
-	display: flex;
+#navicore-plate-inputs {
+	display: none;
 	flex-wrap: nowrap;
 	flex-direction: row;
 	align-items: stretch;
 	justify-content: center;
 	gap: 1rem;
 }
+#navicore-plate-inputs.active {
+	display: flex;
+}
 
-#navicore-search-inputs input[type="text"] {
+#navicore-plate-inputs input[type="text"] {
 	width: 4rem;
 	height: 6rem;
 	font-size: 2.4rem;
@@ -27,7 +30,7 @@
 	border-radius: 6px;
 }
 
-#navicore-search-inputs .guion {
+#navicore-plate-inputs .guion {
 	font-size: 4rem;
 	line-height: 1em;
 	font-weight: 400;
@@ -36,6 +39,25 @@
 	justify-content: center;
 	align-items: center;
 }
+#navicore-search-form select,
+#navicore-vin-input {
+	padding: 0.5rem;
+	font-size: 1rem;
+	border: 2px solid #ededed !important;
+	border-radius: 6px;
+	height: 2.5rem;
+}
+#navicore-vin-input {
+	width: 18rem;
+	display: none;
+	text-align: center;
+	font-weight: 600;
+}
+
+#navicore-vin-input.active {
+	display: block;
+}
+
 #navicore-search-form button {
 	padding: 0.7rem 2rem;
 	font-size: 1.1rem;
@@ -115,10 +137,22 @@
 
 #navicore-search-result .campaign h4 {
 	font-size: 1.2rem;
+	line-height: 1em;
+	margin-bottom: 0;
 	font-weight: 700;
+	color: #000000;
+}
+
+#navicore-search-result .campaign .fecha {
+	font-size: 0.8rem;
+	font-weight: 400;
+	font-style: italic;
+	color: #72787b;
+	margin-bottom: 20px;
 }
 
 #navicore-search-result .campaign p {
 	font-size: 1rem;
 	font-weight: 300;
+	color: #474d4f;
 }

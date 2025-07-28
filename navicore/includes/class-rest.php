@@ -33,12 +33,16 @@ class Rest
     if (!$row) {
       return array('found' => false);
     }
+
+    $row['vin'] = strtoupper($row['vin']);
+    $row['plate'] = strtoupper($row['plate']);
+
     $args = array(
       'post_type' => 'recall_campaign',
       'meta_query' => array(
         array(
           'key' => '_navicore_codes',
-          'value' => $code,
+          'value' => $row['plate'],
           'compare' => 'LIKE',
         ),
       ),
@@ -50,6 +54,7 @@ class Rest
         'title' => $post->post_title,
         'content' => apply_filters('the_content', $post->post_content),
         'link' => get_permalink($post->ID),
+        'date' => get_the_date('', $post->ID),
       );
     }
     return array(

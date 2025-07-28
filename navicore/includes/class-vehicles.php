@@ -134,15 +134,15 @@ class Vehicles
   {
     global $wpdb;
     $table = self::table_name();
-    $vin = sanitize_text_field($_POST['vin'] ?? '');
-    $plate = sanitize_text_field($_POST['plate'] ?? '');
+    $vin = strtoupper(sanitize_text_field($_POST['vin'] ?? ''));
+    $plate = strtoupper(sanitize_text_field($_POST['plate'] ?? ''));
     $model = sanitize_text_field($_POST['model'] ?? '');
     $brand = sanitize_text_field($_POST['brand'] ?? '');
     if (!$vin && !$plate) {
       return false;
     }
     if ($plate && !$this->validate_plate($plate)) {
-      echo '<div class="error notice"><p>Placa no guardada por formato inválido.</p></div>';
+      echo '<div class="error notice"><p>Placa ' . $plate . ' no guardada por formato inválido.</p></div>';
       return false;
     }
     $wpdb->replace(

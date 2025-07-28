@@ -30,7 +30,13 @@ class Shortcode
     ob_start();
     ?>
     <form id="navicore-search-form">
-      <div id="navicore-search-inputs">
+      <select id="navicore-search-type">
+        <option value="vin" selected>Buscar por VIN</option>
+        <option value="plate">Buscar por placa</option>
+      </select>
+      <input type="text" id="navicore-vin-input" class="active" maxlength="22" minlength="15" pattern="[A-Z0-9]{15,22}"
+        placeholder="VIN" />
+      <div id="navicore-plate-inputs">
         <input type="text" maxlength="1" class="navicore-char" data-index="0" />
         <input type="text" maxlength="1" class="navicore-char" data-index="1" />
         <input type="text" maxlength="1" class="navicore-char" data-index="2" />
@@ -39,6 +45,7 @@ class Shortcode
         <input type="text" maxlength="1" class="navicore-char" data-index="4" />
         <input type="text" maxlength="1" class="navicore-char" data-index="5" />
       </div>
+
       <button type="submit" disabled>Buscar</button>
     </form>
     <div id="navicore-search-result"></div>
