@@ -1,21 +1,60 @@
 #navicore-search-form {
 	display: flex;
-	gap: 0.5rem;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: nowrap;
+	gap: 1.5rem;
 	margin-bottom: 1rem;
 }
-#navicore-search-form input[type="text"] {
-	flex: 1;
+#navicore-search-inputs {
+	display: flex;
+	flex-wrap: nowrap;
+	flex-direction: row;
+	align-items: stretch;
+	justify-content: center;
+	gap: 1rem;
+}
+
+#navicore-search-inputs input[type="text"] {
+	width: 4rem;
+	height: 6rem;
+	font-size: 2.4rem;
+	font-weight: 600;
 	padding: 0.5rem;
-	border: 1px solid #ccc;
-	border-radius: 4px;
+	text-align: center;
+	border: 2px solid #ededed !important;
+	border-radius: 6px;
+}
+
+#navicore-search-inputs .guion {
+	font-size: 4rem;
+	line-height: 1em;
+	font-weight: 400;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 #navicore-search-form button {
-	padding: 0.5rem 1rem;
-	background: #0073aa;
+	padding: 0.7rem 2rem;
+	font-size: 1.1rem;
+	background: #01589b;
 	color: #fff;
 	border: none;
-	border-radius: 4px;
+	border-radius: 24px;
 	cursor: pointer;
+	opacity: 0.8;
+	transition: all 0.4s ease-in-out;
+}
+
+#navicore-search-form button:hover {
+	opacity: 1;
+}
+
+#navicore-search-form button:disabled {
+	cursor: not-allowed;
+	opacity: 0.2;
 }
 #navicore-search-result .campaign {
 	border: 1px solid #ddd;
@@ -23,4 +62,63 @@
 	margin-top: 1rem;
 	border-radius: 4px;
 	background: #fafafa;
+}
+
+.navicore-loading {
+	width: 24px;
+	height: 24px;
+	border: 4px solid #f3f3f3;
+	border-top: 4px solid #0073aa;
+	border-radius: 50%;
+	animation: navicore-spin 1s linear infinite;
+	margin: 0.5rem auto;
+}
+
+@keyframes navicore-spin {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+#navicore-search-result h3 {
+	font-size: 1.4rem;
+	font-weight: 600;
+	margin-top: 20px;
+}
+
+#navicore-search-result .intro {
+	font-size: 1rem;
+	font-weight: 400;
+	text-align: center;
+	margin-top: 20px;
+}
+
+#navicore-search-result .intro h4 {
+	font-size: 1.2rem;
+	font-weight: 600;
+}
+
+#navicore-search-result .intro h4 strong {
+	color: #f35506;
+	font-weight: 700;
+}
+
+#navicore-search-result .campaign {
+	background: #fdfdfd;
+	border-radius: 12px;
+	box-shadow: 0 0 8px rgba(0, 0, 0, 0.12);
+	padding: 30px;
+}
+
+#navicore-search-result .campaign h4 {
+	font-size: 1.2rem;
+	font-weight: 700;
+}
+
+#navicore-search-result .campaign p {
+	font-size: 1rem;
+	font-weight: 300;
 }

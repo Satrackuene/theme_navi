@@ -44,13 +44,13 @@ jQuery(function ($) {
 				return;
 			}
 
-			var html = "<h4>Vehículo:</h4>";
+			var html = "<h3>Vehículo:</h3>";
 			html += "<p><strong>VIN:</strong> " + res.vehicle.vin + "<br>";
 			html += "<strong>Placa:</strong> " + res.vehicle.plate + "<br>";
 			html += "<strong>Modelo:</strong> " + res.vehicle.model + "<br>";
 			html += "<strong>Marca:</strong> " + res.vehicle.brand + "</p>";
 			if (res.campaigns.length) {
-				html += html = "<div><h3><strong>Importante:</strong> Campañas de Seguridad para su Vehículo</h3>";
+				html += html = "<div class='intro'><h4><strong>Importante:</strong> Campañas de Seguridad para su Vehículo</h4>";
 				"<p>En International y Navitrans, trabajamos constantemente para ofrecerle el máximo desempeño y seguridad en nuestros productos. Por este motivo, informamos que su vehículo con VIN " +
 					res.vehicle.vin;
 				if (res.campaigns.length > 1) {

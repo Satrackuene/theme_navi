@@ -34,6 +34,7 @@ class Shortcode
         <input type="text" maxlength="1" class="navicore-char" data-index="0" />
         <input type="text" maxlength="1" class="navicore-char" data-index="1" />
         <input type="text" maxlength="1" class="navicore-char" data-index="2" />
+        <div class="guion">-</div>
         <input type="text" maxlength="1" class="navicore-char" data-index="3" />
         <input type="text" maxlength="1" class="navicore-char" data-index="4" />
         <input type="text" maxlength="1" class="navicore-char" data-index="5" />
