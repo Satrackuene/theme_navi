@@ -13,8 +13,8 @@ class Shortcode
   public function enqueue()
   {
     if (!is_admin()) {
-      wp_register_script('navicore-search', NAVICORE_URL . 'assets/cnv-search.js', array('jquery'), NAVICORE_VERSION, true);
-      wp_register_style('navicore-style', NAVICORE_URL . 'assets/cnv-style.css', array(), NAVICORE_VERSION);
+      wp_register_script('navicore-search', NAVICORE_URL . 'assets/js/cnv-search.js', array('jquery'), NAVICORE_VERSION, true);
+      wp_register_style('navicore-style', NAVICORE_URL . 'assets/css/cnv-style.css', array(), NAVICORE_VERSION);
 
     }
   }
