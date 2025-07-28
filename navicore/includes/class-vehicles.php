@@ -54,10 +54,11 @@ class Vehicles
     }
     echo '<div class="wrap"><h1>Cargar Datos de Vehículos</h1>';
 
-    if (!empty($_POST['delete_vehicle']) && !empty($_POST['vin'])) {
-      $this->handle_delete($_POST['vin']);
+    if (!empty($_POST['delete_vehicle']) && $_POST['delete_vehicle'] == 'delete_vehicle') {
+      $this->handle_delete($_POST['vin'] ?? '');
       echo '<div class="updated notice"><p>Vehículo eliminado.</p></div>';
     }
+
 
     if (!empty($_POST['submit']) && !empty($_FILES['vehicles_csv']['tmp_name'])) {
       $invalid = $this->handle_csv_upload($_FILES['vehicles_csv']['tmp_name']);
@@ -163,10 +164,10 @@ class Vehicles
     global $wpdb;
     $table = self::table_name();
     $vin = sanitize_text_field($vin);
-    if (!$vin) {
-      return;
+
+    if ($vin) {
+      $wpdb->delete($table, array('vin' => $vin), array('%s'));
     }
-    $wpdb->delete($table, array('vin' => $vin), array('%s'));
   }
 
   private function validate_plate($plate)
@@ -202,7 +203,9 @@ class Vehicles
       echo '<td>' . esc_html($r['brand']) . '</td>';
       echo '<td><form method="post" style="display:inline">' .
         '<input type="hidden" name="vin" value="' . esc_attr($r['vin']) . '" />' .
-        '<button type="submit" name="delete_vehicle" class="button-link-delete">Eliminar</button>' .
+        '<input type="hidden" name="plate" value="' . esc_attr($r['plate']) . '" />' .
+        '<input type="hidden" name="delete_vehicle" value="delete_vehicle" />' .
+        '<button type="submit" class="button-link-delete">Eliminar</button>' .
         '</form></td>';
       echo '</tr>';
     }
