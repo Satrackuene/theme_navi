@@ -30,8 +30,15 @@ class Shortcode
     ob_start();
     ?>
     <form id="navicore-search-form">
-      <input type="text" id="navicore-search-input" placeholder="Placa o VIN" required />
-      <button type="submit">Buscar</button>
+      <div id="navicore-search-inputs">
+        <input type="text" maxlength="1" class="navicore-char" data-index="0" />
+        <input type="text" maxlength="1" class="navicore-char" data-index="1" />
+        <input type="text" maxlength="1" class="navicore-char" data-index="2" />
+        <input type="text" maxlength="1" class="navicore-char" data-index="3" />
+        <input type="text" maxlength="1" class="navicore-char" data-index="4" />
+        <input type="text" maxlength="1" class="navicore-char" data-index="5" />
+      </div>
+      <button type="submit" disabled>Buscar</button>
     </form>
     <div id="navicore-search-result"></div>
     <?php
